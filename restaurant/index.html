@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Swaad - Authentic Indian Restaurant. Experience the rich flavors and spices of India.">
+    <title>Swaad - The Taste of India</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <i class="fas fa-utensils fa-spin"></i>
+            <p>Preparing Your Experience...</p>
+        </div>
+    </div>
+
+    <!-- Cart Toast Notification -->
+    <div class="cart-toast" id="cartToast">
+        <i class="fas fa-check-circle me-2"></i><span id="cartToastMsg">Item added to cart!</span>
+    </div>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart" id="floatingCart" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5><i class="fas fa-shopping-bag me-2"></i>Your Order</h5>
+            <button onclick="toggleCart()" class="btn btn-sm btn-close btn-close-white"></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="text-center text-muted mt-4">Your cart is empty</p>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total d-flex justify-content-between mb-3">
+                <strong>Total:</strong>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="btn btn-custom w-100" onclick="checkout()">Place Order</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-utensils me-2"></i>Swaad
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn-outline-gold px-3 py-1 rounded-pill" href="tel:+917756918115">
+                            <i class="fas fa-phone me-1"></i>Call Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-badge animate-fade-down">
+                <i class="fas fa-star"></i> Rated #1 Indian Restaurant 2024
+            </div>
+            <h1 class="animate-fade-down">Experience<br><span class="text-gold">Authentic India</span></h1>
+            <p class="animate-fade-up">A culinary journey through the rich flavors and spices of the subcontinent.</p>
+            <div class="hero-stats animate-fade-up" style="animation-delay:0.4s;">
+                <div class="stat">
+                    <span class="stat-num">15+</span>
+                    <span class="stat-label">Years</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">120+</span>
+                    <span class="stat-label">Dishes</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">50K+</span>
+                    <span class="stat-label">Happy Guests</span>
+                </div>
+            </div>
+            <div class="hero-buttons animate-fade-up" style="animation-delay:0.6s;">
+                <a href="#menu" class="btn btn-custom me-3">
+                    <i class="fas fa-book-open me-2"></i>View Menu
+                </a>
+                <a href="#reservation" class="btn btn-outline-gold">
+                    <i class="fas fa-calendar-check me-2"></i>Book a Table
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="features-bar">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-md-3 feature-item">
+                    <i class="fas fa-leaf"></i>
+                    <div>
+                        <h6>Fresh Ingredients</h6>
+                        <small>Locally sourced daily</small>
+                    </div>
+                </div>
+                <div class="col-md-3 feature-item">
+                    <i class="fas fa-fire-alt"></i>
+                    <div>
+                        <h6>Tandoor Oven</h6>
+                        <small>Authentic clay cooking</small>
+                    </div>
+                </div>
+                <div class="col-md-3 feature-item">
+                    <i class="fas fa-truck"></i>
+                    <div>
+                        <h6>Fast Delivery</h6>
+                        <small>Within 30 minutes</small>
+                    </div>
+                </div>
+                <div class="col-md-3 feature-item">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <h6>Award Winning</h6>
+                        <small>Best Indian Cuisine 2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-tag">Our Story</span>
+                <h2>A Legacy of Flavor</h2>
+                <p>Crafting authentic Indian experiences since 2005</p>
+            </div>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal">
+                    <div class="about-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop"
+                            class="img-fluid rounded-3 shadow-lg main-img" alt="Restaurant Interior">
+                        <div class="about-badge">
+                            <span class="badge-number">15+</span>
+                            <span class="badge-text">Years of Culinary Excellence</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1606491956689-2ea28c674675?q=80&w=300&auto=format&fit=crop"
+                            class="img-fluid rounded-3 shadow float-img" alt="Chef at work">
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal">
+                    <span class="section-tag">Welcome to Swaad</span>
+                    <h3 class="mb-3">Where Tradition Meets Elegance</h3>
+                    <p class="lead text-muted mb-3">Established in 2005 in the heart of Chinchwad, Maharashtra, Swaad
+                        brings you the finest authentic recipes passed down through generations.</p>
+                    <p class="text-muted">Our chefs use only the freshest locally sourced ingredients and traditional
+                        spices imported directly from India, creating dishes that are a feast for both the eyes and the
+                        palate.</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="about-feature">
+                                <i class="fas fa-mortar-pestle text-primary"></i>
+                                <span>Hand-ground Spices</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="about-feature">
+                                <i class="fas fa-seedling text-primary"></i>
+                                <span>Organic Produce</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="about-feature">
+                                <i class="fas fa-user-tie text-primary"></i>
+                                <span>Master Chefs</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="about-feature">
+                                <i class="fas fa-heart text-primary"></i>
+                                <span>Cooked with Love</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#menu" class="btn btn-custom mt-4">
+                        <i class="fas fa-utensils me-2"></i>Explore Our Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Banner -->
+    <section class="special-offer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 reveal">
+                    <h3><i class="fas fa-tag me-2"></i>Today's Special Offer</h3>
+                    <p class="mb-0">Get <strong>20% OFF</strong> on all Biryani varieties every Wednesday! Use code
+                        <strong>SWAAD20</strong></p>
+                </div>
+                <div class="col-md-4 text-md-end reveal">
+                    <a href="#reservation" class="btn btn-outline-light mt-3 mt-md-0">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section-padding bg-light-cream">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-tag">What We Offer</span>
+                <h2>Our Menu</h2>
+                <p>Authentic flavors prepared with love and tradition.</p>
+            </div>
+
+            <!-- Menu Search & Filter -->
+            <div class="row mb-5 reveal">
+                <div class="col-md-6 mx-auto mb-4">
+                    <div class="menu-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="menuSearch" class="form-control" placeholder="Search dishes...">
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <ul class="list-inline" id="menu-flters">
+                        <li class="list-inline-item filter-active" data-filter="all">All</li>
+                        <li class="list-inline-item" data-filter="starters">Starters</li>
+                        <li class="list-inline-item" data-filter="mains">Main Course</li>
+                        <li class="list-inline-item" data-filter="desserts">Desserts</li>
+                        <li class="list-inline-item" data-filter="drinks">Drinks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="row g-4" id="menu-container">
+                <!-- JavaScript populates this -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-tag">Visual Feast</span>
+                <h2>Gallery</h2>
+                <p>A glimpse into our world of flavors and ambiance.</p>
+            </div>
+            <div class="row g-3" id="gallery-grid">
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=600&auto=format&fit=crop"
+                            class="img-fluid" alt="Curry">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Chicken Curry</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=600&auto=format&fit=crop"
+                            class="img-fluid" alt="Biryani">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Aromatic Biryani</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1505253758473-96b701d2cd3e?q=80&w=600&auto=format&fit=crop"
+                            class="img-fluid" alt="Naan">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Fresh Naan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=600&auto=format&fit=crop"
+                            class="img-fluid" alt="Dumplings">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Momos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1606491956689-2ea28c674675?q=80&w=600&auto=format&fit=crop"
+                            class="img-fluid" alt="Tandoori">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Tandoori Platter</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1517244683847-745431f57235?q=80&w=600&auto=format&fit=crop"
+                            class="img-fluid" alt="Atmosphere">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Our Ambiance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-dark-custom">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-tag" style="color: var(--secondary-color);">What They Say</span>
+                <h2 style="color:#fff;">Customer Reviews</h2>
+                <p style="color:#bbb;">Real words from our treasured guests</p>
+            </div>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center">
+                                <div class="testimonial-card">
+                                    <div class="stars mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <p class="testimonial-text">"The Butter Chicken here is absolutely divine! The
+                                        spices are perfectly balanced and the naan was fresh out of the tandoor. An
+                                        experience unlike any other Indian restaurant in the city."</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">A</div>
+                                        <div>
+                                            <strong>Anjali Sharma</strong>
+                                            <small class="d-block text-muted">Google Review</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center">
+                                <div class="testimonial-card">
+                                    <div class="stars mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <p class="testimonial-text">"Best Biryani in Pune! The aroma alone is worth the
+                                        trip. The service was impeccable, and the ambiance truly transports you to the
+                                        streets of India. Highly recommended!"</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">R</div>
+                                        <div>
+                                            <strong>Rahul Mehta</strong>
+                                            <small class="d-block text-muted">Zomato Review</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center">
+                                <div class="testimonial-card">
+                                    <div class="stars mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <p class="testimonial-text">"Celebrating our anniversary at Swaad was magical. The
+                                        chefs came out to greet us and the Gulab Jamun was melt-in-mouth perfection. We
+                                        will definitely be back!"</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">P</div>
+                                        <div>
+                                            <strong>Priya & Vikram</strong>
+                                            <small class="d-block text-muted">TripAdvisor Review</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+                <div class="carousel-indicators" style="bottom: -40px;">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="section-padding bg-light-cream">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-tag">Reserve Your Seat</span>
+                <h2>Book a Table</h2>
+                <p>Reserve your spot for an unforgettable dining experience.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 reveal">
+                    <form class="reservation-form p-4 p-lg-5 shadow-lg bg-white rounded-4" id="reservationForm"
+                        novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="form-control" id="resName" placeholder="John Doe"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Email <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="form-control" id="resEmail" placeholder="you@email.com"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Phone <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" class="form-control" id="resPhone" placeholder="+91 XXXXX XXXXX"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Date <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                    <input type="date" class="form-control" id="resDate" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Time <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                    <input type="time" class="form-control" id="resTime" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Guests <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-users"></i></span>
+                                    <select class="form-select" id="resGuests" required>
+                                        <option value="">Select</option>
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 People</option>
+                                        <option value="3">3 People</option>
+                                        <option value="4">4 People</option>
+                                        <option value="5+">5+ People</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Special Request</label>
+                                <textarea class="form-control" id="resMsg" rows="3"
+                                    placeholder="Any dietary requirements or special occasions..."></textarea>
+                            </div>
+                            <div class="col-12 text-center mt-2">
+                                <button type="submit" class="btn btn-custom px-5" id="bookBtn">
+                                    <i class="fas fa-calendar-check me-2"></i>Confirm Reservation
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="reservation-success" id="reservationSuccess" style="display:none;">
+                        <i class="fas fa-check-circle fa-3x mb-3"></i>
+                        <h4>Reservation Confirmed!</h4>
+                        <p>Thank you! We'll send a confirmation to your email shortly. See you soon!</p>
+                        <button class="btn btn-custom" onclick="resetForm()">Make Another</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 footer-info reveal">
+                    <h3><i class="fas fa-utensils me-2"></i>Swaad</h3>
+                    <p>A culinary journey through the rich flavors and spices of India. Bringing authenticity to every
+                        plate since 2005.</p>
+                    <div class="opening-hours mt-3">
+                        <h6 class="text-white mb-2"><i class="fas fa-clock me-2"></i>Opening Hours</h6>
+                        <small class="text-muted d-block">Mon – Thu: 11:00 AM – 10:00 PM</small>
+                        <small class="text-muted d-block">Fri – Sun: 11:00 AM – 11:30 PM</small>
+                    </div>
+                    <div class="social-links mt-3">
+                        <a href="#" class="twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links reveal">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#home">Home</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#about">About Us</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#menu">Menu</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#gallery">Gallery</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#testimonials">Reviews</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#reservation">Reservation</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links reveal">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Dine In</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Catering</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Private Events</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Home Delivery</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Takeout</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Corporate Lunch</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-newsletter reveal">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info mb-3">
+                        <p><i class="fas fa-map-marker-alt me-2 text-primary"></i>Chinchwad, Maharashtra, India</p>
+                        <p><i class="fas fa-phone me-2 text-primary"></i><a href="tel:+917756918115">+91 7756918115</a>
+                        </p>
+                        <p><i class="fas fa-envelope me-2 text-primary"></i><a
+                                href="mailto:vsk@swaadrestaurant.com">vsk@swaadrestaurant.com</a></p>
+                    </div>
+                    <h6 class="text-white mb-2">Newsletter</h6>
+                    <p class="mb-2">Subscribe for exclusive deals & updates.</p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <p class="mb-0">&copy; 2024 <strong>Swaad</strong>. All Rights Reserved.</p>
+                    <p class="mb-0">Designed by <a
+                            href="https://www.linkedin.com/in/vardhan-santosh-khinvasara-9a79a8296"
+                            target="_blank">Vardhan Khinvasara</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -5,9 +5,9 @@
 // ── Menu Data ────────────────────────────────────────────────
 const menuItems = [
     {
-        id: 1, title: "Butter Chicken", category: "mains", price: 18.99, veg: false,
-        img: "https://images.unsplash.com/photo-1627564860477-f273292418a0?q=80&w=400&auto=format&fit=crop",
-        desc: "Tender chicken in a rich, creamy tomato-butter sauce with aromatic spices."
+        id: 1, title: "Paneer Butter Masala", category: "mains", price: 15.99, veg: true,
+        img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=400&auto=format&fit=crop",
+        desc: "Fresh paneer cubes in a rich, creamy tomato-butter sauce with aromatic spices."
     },
     {
         id: 2, title: "Samosa Chaat", category: "starters", price: 8.99, veg: true,
@@ -30,9 +30,9 @@ const menuItems = [
         desc: "Marinated cottage cheese cubes grilled to perfection in a live tandoor."
     },
     {
-        id: 6, title: "Chicken Biryani", category: "mains", price: 16.99, veg: false,
-        img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=400&auto=format&fit=crop",
-        desc: "Aromatic basmati rice slow-cooked with chicken and whole spices."
+        id: 6, title: "Veg Dum Biryani", category: "mains", price: 14.99, veg: true,
+        img: "https://images.unsplash.com/photo-1543362906-acfc16c623a2?q=80&w=400&auto=format&fit=crop",
+        desc: "Aromatic basmati rice slow-cooked with fresh garden vegetables and whole spices."
     },
     {
         id: 7, title: "Rasmalai", category: "desserts", price: 7.50, veg: true,

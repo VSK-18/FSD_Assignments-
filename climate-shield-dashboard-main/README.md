@@ -1,16 +1,39 @@
-# React + Vite
+# Climate Shield Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive, high-performance climate monitoring dashboard built using React and Vite. It provides real-time data visualization and mapping capabilities to track climate changes and environmental metrics.
 
-Currently, two official plugins are available:
+## 🌍 Key Features
+- **Interactive Maps:** Integrates `react-leaflet` to display geospatial data.
+- **Data Visualization:** Utilizes `recharts` for rendering engaging, dynamic graphs and charts representing climate metrics.
+- **Modern UI:** Built with React 19 and interactive front-end components.
+- **Fast Build Tool:** Powered by Vite for near-instant server start and hot module replacement (HMR).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💻 Tech Stack
+- **Frontend Development:** React (^19.2.0)
+- **Routing:** React Router DOM (^7.13.0)
+- **Maps:** Leaflet & React Leaflet
+- **Charts:** Recharts (^3.7.0)
+- **Icons:** React Icons
+- **Build System:** Vite
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Expanding the ESLint configuration
+2. **Run Development Server:**
+   ```bash
+   npm run dev
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. **Build for Production:**
+   ```bash
+   npm run build
+   ```
+
+## 📂 Project Structure
+- `src/`: Contains React components, routing configurations, and styling.
+- `public/`: Static assets for the application.
+- `package.json`: Manages scripts and dependencies.

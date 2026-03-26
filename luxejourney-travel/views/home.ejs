@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+    <main>
+        <section class="hero">
+            <h1>Escape to Extraordinary</h1>
+            <p>Experience the world's most breathtaking destinations with unrivaled luxury and personalized service.</p>
+            <a href="/destinations" class="cta-button">Explore Destinations</a>
+        </section>
+
+        <section>
+            <h2 class="section-title">Featured Escapes</h2>
+            <div class="grid">
+                <% featured.forEach(item=> { %>
+                    <div class="card">
+                        <img src="<%= item.image %>" alt="<%= item.name %>">
+                        <div class="card-content">
+                            <h3 class="card-title">
+                                <%= item.name %>
+                            </h3>
+                            <p class="card-price">$<%= item.price %> / person</p>
+                            <p style="margin-bottom: 1rem;">
+                                <%= item.description %>
+                            </p>
+                            <a href="/book/<%= item._id %>" class="card-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>

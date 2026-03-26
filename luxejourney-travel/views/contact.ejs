@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+
+    <main>
+        <section>
+            <h2 class="section-title">Connect With Us</h2>
+            <div class="booking-container" style="max-width: 800px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Get in Touch</h3>
+                        <p style="margin-bottom: 1rem;"><strong>Corporate Office:</strong><br>123 Luxury Lane,
+                            CP,<br>New Delhi, India</p>
+                        <p style="margin-bottom: 1rem;"><strong>Email:</strong><br>hello@luxejourney.in</p>
+                        <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>+91 1234 567 890</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Inquiry Form</h3>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required style="padding: 0.8rem;">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required style="padding: 0.8rem;">
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Tell us more about your dream trip..."
+                                    style="width: 100%; padding: 0.8rem; background: #2a2a2a; border: 1px solid #444; color: #fff; border-radius: 5px; height: 100px;"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>

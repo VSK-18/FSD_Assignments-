@@ -16,7 +16,7 @@ const menuItems = [
     },
     {
         id: 3, title: "Gulab Jamun", category: "desserts", price: 6.99, veg: true,
-        img: "https://images.unsplash.com/photo-1690184462153-65922ebdd1db?q=80&w=400&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photos/a-plate-of-food-2oJ4eGRPqrE",
         desc: "Soft milk-solid dumplings soaked in rose-flavored sugar syrup. Served warm."
     },
     {

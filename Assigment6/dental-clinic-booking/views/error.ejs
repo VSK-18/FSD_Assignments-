@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+    <div class="error-container flex-center" style="min-height: 50vh;">
+        <div class="glass-panel text-center fade-in-up">
+            <h2 style="color: var(--accent);">Oops! Something went wrong.</h2>
+            <p class="mt-4">
+                <%= typeof message !=='undefined' ? message : 'An unexpected error occurred.' %>
+            </p>
+            <div class="mt-4">
+                <a href="/" class="btn btn-primary">Return Home</a>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>

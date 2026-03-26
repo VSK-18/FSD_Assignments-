@@ -1,0 +1,65 @@
+<%- include('partials/header') %>
+
+    <div class="dashboard-container fade-in-up">
+        <div class="dashboard-header">
+            <h2>Clinic Dashboard</h2>
+            <p>Manage patient appointments and schedules</p>
+        </div>
+
+        <div class="glass-panel table-container mt-4">
+            <% if (typeof appointments==='undefined' || appointments.length===0) { %>
+                <div class="empty-state">
+                    <span style="font-size: 3rem;">📅</span>
+                    <p class="mt-4">No appointments scheduled yet.</p>
+                </div>
+                <% } else { %>
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>Patient</th>
+                                <th>Dentist</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% appointments.forEach(function(appt) { %>
+                                <tr class="hover-row">
+                                    <td>
+                                        <strong>
+                                            <%= appt.date %>
+                                        </strong><br>
+                                        <span class="time-badge">
+                                            <%= appt.time %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <%= appt.patientName %>
+                                        </strong><br>
+                                        <span class="text-muted">
+                                            <%= appt.patientPhone %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <%= appt.dentist ? appt.dentist.name : 'Unknown' %>
+                                        </strong><br>
+                                        <span class="text-muted">
+                                            <%= appt.dentist ? appt.dentist.specialization : '' %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge status-<%= appt.status.toLowerCase() %>">
+                                            <%= appt.status %>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                    <% } %>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>

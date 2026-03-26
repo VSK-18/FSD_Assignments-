@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+    <div class="booking-container fade-in-up">
+        <div class="booking-card glass-panel">
+            <h2>Schedule an Appointment</h2>
+            <p>Book a session with our expert dentists in seconds.</p>
+
+            <form id="bookingForm" class="booking-form mt-4">
+                <div class="form-group">
+                    <label for="patientName">Full Name</label>
+                    <input type="text" id="patientName" name="patientName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="patientPhone">Phone Number</label>
+                    <input type="tel" id="patientPhone" name="patientPhone" required placeholder="(123) 456-7890">
+                </div>
+                <div class="form-group">
+                    <label for="dentist">Select Dentist</label>
+                    <div class="select-wrapper">
+                        <select id="dentist" name="dentist" required>
+                            <option value="" disabled selected>Choose a specialist...</option>
+                            <% if(typeof dentists !=='undefined' && dentists.length> 0) { %>
+                                <% dentists.forEach(function(dentist) { %>
+                                    <option value="<%= dentist._id %>">
+                                        <%= dentist.name %> - <%= dentist.specialization %>
+                                    </option>
+                                    <% }); %>
+                                        <% } else { %>
+                                            <option value="">Loading dentists...</option>
+                                            <% } %>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required
+                            min="<%= new Date().toISOString().split('T')[0] %>">
+                    </div>
+                    <div class="form-group half">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width mt-4" id="submitBtn">Confirm Booking</button>
+                <div id="formMessage" class="form-message" style="display:none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>

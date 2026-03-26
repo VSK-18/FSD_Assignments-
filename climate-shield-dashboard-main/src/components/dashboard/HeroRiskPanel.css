@@ -1,0 +1,125 @@
+.hero-risk-panel {
+    background: var(--color-bg-card);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.risk-indicator {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-xl);
+}
+
+.risk-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.risk-score {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.risk-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+.risk-content {
+    flex: 1;
+}
+
+.risk-content h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.risk-message {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.weather-quick-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.ai-insight {
+    background-color: rgba(46, 196, 182, 0.1);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    max-width: 300px;
+    border-left: 4px solid var(--color-secondary);
+}
+
+.ai-insight h4 {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    margin-bottom: 2px;
+}
+
+.ai-insight p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .hero-risk-panel {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-lg);
+    }
+
+    .risk-indicator {
+        margin-right: 0;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .weather-quick-stats {
+        justify-content: center;
+    }
+
+    .ai-insight {
+        margin-top: var(--spacing-lg);
+        width: 100%;
+        max-width: none;
+        text-align: left;
+    }
+}

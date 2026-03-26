@@ -1,0 +1,102 @@
+/* CSS Variables for ClimateShield AI Dashboard */
+:root {
+  /* High-Fidelity Dark Mode - Slate 950 Basis */
+  --color-bg-body: #020617;
+  --color-bg-card: #0f172a;
+  --color-bg-accent: #1e293b;
+
+  /* Brand Colors - Peak Contrast */
+  --color-brand: #14b8a6;
+  /* Teal 500 */
+  --color-brand-glow: rgba(20, 184, 166, 0.25);
+
+  /* Text - WCAG AA High Contrast */
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #64748b;
+
+  /* Hazards */
+  --color-safe: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Utils */
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.75rem;
+  --border-radius-lg: 1.25rem;
+  --border-radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  --shadow-premium: 0 10px 30px -5px rgba(2, 6, 23, 0.5);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1.25rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3.5rem;
+
+  /* Typography */
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2.25rem;
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animations */
+@keyframes pulse-danger {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Dark Mode Overrides */
+[data-theme='dark'] {
+  --color-bg-body: #0B0E14;
+  --color-bg-card: #151921;
+  --color-bg-sidebar: #151921;
+
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+
+  --gradient-card: linear-gradient(180deg, #1A1F29 0%, #151921 100%);
+
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+}

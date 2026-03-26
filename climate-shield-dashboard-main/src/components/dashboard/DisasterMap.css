@@ -1,0 +1,113 @@
+.disaster-map-section {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.map-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.matrix-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.header-icon {
+    font-size: 1.75rem;
+    color: var(--color-brand);
+}
+
+.matrix-title h3 {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    margin: 0;
+    font-weight: 800;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: var(--color-danger);
+    letter-spacing: 0.1em;
+}
+
+.map-controls-premium {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.control-btn-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.control-btn-icon:hover {
+    background: var(--color-brand);
+    color: white;
+}
+
+.map-wrapper-premium {
+    height: 450px;
+    position: relative;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.map-legend-premium {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: var(--spacing-lg);
+    background: rgba(2, 6, 23, 0.9);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    box-shadow: var(--shadow-xl);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.legend-item .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.map-popup-dark {
+    color: #020617;
+    font-family: inherit;
+}
+
+.map-popup-dark strong {
+    display: block;
+    margin-bottom: 4px;
+}

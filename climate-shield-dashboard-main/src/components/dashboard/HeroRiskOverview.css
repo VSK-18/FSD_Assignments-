@@ -1,0 +1,224 @@
+.hero-risk-dashboard {
+    padding: var(--spacing-xl) 0;
+    width: 100%;
+}
+
+.hero-main-card {
+    padding: var(--spacing-2xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.brand-badge-premium {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-radius: var(--border-radius-full);
+    border: 1px solid var(--border-color);
+}
+
+.brand-icon {
+    font-size: 1.5rem;
+    color: var(--color-brand);
+}
+
+.brand-text {
+    font-size: var(--font-size-sm);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--color-text-primary);
+}
+
+.live-status-pill {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(239, 68, 68, 0.1);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-full);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-danger);
+}
+
+.dot.pulse {
+    animation: alert-pulse 2s infinite;
+}
+
+.live-text {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-danger);
+    letter-spacing: 0.05em;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+}
+
+.hero-display-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.04em;
+    color: var(--color-text-primary);
+}
+
+.hero-tagline {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 500;
+}
+
+.risk-badge-box {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.badge-pill {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    font-weight: 900;
+    font-size: var(--font-size-lg);
+}
+
+.badge-subtext {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text-muted);
+}
+
+/* Stats Grid */
+.hero-stats-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+}
+
+.stat-value {
+    font-size: var(--font-size-xl);
+    font-weight: 900;
+    color: var(--color-text-primary);
+}
+
+.stat-progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-xs);
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 1s ease-out;
+}
+
+.stat-caption {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.threat-heading {
+    font-size: var(--font-size-lg);
+    margin: var(--spacing-xs) 0 var(--spacing-md);
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.threat-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-brand);
+    font-weight: 700;
+}
+
+.threat-icon {
+    font-size: 1.5rem;
+}
+
+.anim-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes alert-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+
+    70% {
+        transform: scale(1.1);
+        opacity: 0.8;
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}

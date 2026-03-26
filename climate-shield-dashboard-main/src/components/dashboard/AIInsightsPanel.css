@@ -1,0 +1,155 @@
+/* AI Insights Dashboard Styles - Speech Bubble Edition */
+.ai-insights-dashboard {
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+}
+
+.assistant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ai-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.ai-icon-circle {
+    width: 44px;
+    height: 44px;
+    background: var(--color-brand);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 15px var(--color-brand-glow);
+}
+
+.ai-title h3 {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    margin: 0;
+    font-weight: 800;
+}
+
+.ai-subtitle {
+    font-size: 0.6rem;
+    color: var(--color-brand);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.ai-status {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.insights-vertical-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.insight-speech-bubble {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.bubble-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.bubble-body {
+    background: rgba(255, 255, 255, 0.03);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    position: relative;
+    z-index: 2;
+    transition: var(--transition-normal);
+}
+
+.bubble-tail {
+    position: absolute;
+    right: -6px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    background: rgba(15, 23, 42, 1);
+    transform: rotate(45deg);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    z-index: 1;
+}
+
+.bubble-icon-area {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-brand);
+    background: rgba(20, 184, 166, 0.1);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.bubble-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+}
+
+.category {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-brand);
+    letter-spacing: 0.05em;
+}
+
+.score {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+}
+
+.bubble-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: var(--spacing-xs) 0 0;
+    font-weight: 500;
+}
+
+/* Coloring based on type */
+.insight-speech-bubble.hazard .bubble-icon-area {
+    color: var(--color-danger);
+}
+
+.insight-speech-bubble.advice .bubble-icon-area {
+    color: var(--color-accent);
+}
+
+.insight-speech-bubble.trend .bubble-icon-area {
+    color: var(--color-secondary);
+}
+
+.insight-speech-bubble:hover .bubble-body {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(-4px);
+    border-color: rgba(20, 184, 166, 0.3);
+}

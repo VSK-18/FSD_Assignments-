@@ -1,0 +1,164 @@
+/* Alert Feed Styles - Disaster Focused */
+.alert-feed-container {
+    padding: var(--spacing-xl) 0;
+}
+
+.alert-feed-container .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--color-bg-body);
+    padding-bottom: var(--spacing-md);
+}
+
+.title-stack .subtitle {
+    display: block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 0.1em;
+}
+
+.title-stack h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    font-weight: 800;
+}
+
+.alert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.alert-card {
+    position: relative;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    transition: var(--transition-normal);
+}
+
+.alert-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.alert-accent-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    border-radius: 3px 0 0 3px;
+}
+
+.alert-card.critical .alert-accent-bar {
+    background: var(--color-danger);
+}
+
+.alert-card.warning .alert-accent-bar {
+    background: var(--color-warning);
+}
+
+.alert-card.info .alert-accent-bar {
+    background: var(--color-brand);
+}
+
+.alert-body {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+}
+
+.alert-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.severity-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: var(--border-radius-full);
+}
+
+.severity-tag.critical {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--color-danger);
+}
+
+.severity-tag.warning {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--color-warning);
+}
+
+.severity-tag.info {
+    background: rgba(20, 184, 166, 0.2);
+    color: var(--color-brand);
+}
+
+.timestamp {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.alert-title {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.alert-location {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.action-box {
+    margin-top: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.03);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.action-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+}
+
+.recommendation-text {
+    margin-top: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.alert-card.critical {
+    animation: alert-glow 3s infinite;
+}
+
+@keyframes alert-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0px rgba(239, 68, 68, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+    }
+}

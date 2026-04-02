@@ -1,6 +1,5 @@
 # ✈️ LuxeJourney - Premium Travel Agency
 
-![Banner](./assets/banner.png)
 
 A full-stack travel agency web application built with a Node.js and Express backend, utilizing EJS for server-side templating and MongoDB as the database. Features a sleek, responsive design and robust backend architecture.
 

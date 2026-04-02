@@ -1,6 +1,6 @@
 # 👨‍💻 Personal Portfolio - Vardhan Khinvasara
 
-![Banner](./assets/banner.png)
+
 
 A sleek, responsive, and modern personal portfolio website showcasing projects, experience, and skills in Software Engineering and Robotics. Designed to highlight technical proficiency and professional achievements with a clean, minimalist aesthetic.
 

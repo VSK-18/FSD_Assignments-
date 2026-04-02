@@ -1,6 +1,5 @@
 # 🚀 Full Stack Development Assignments
 
-![Banner](./portfolio/assets/banner.png)
 
 Welcome to the central repository for the **Full Stack Development (FSD)** assignments and projects. This collection documents a comprehensive journey through modern web development, from semantic HTML fundamentals to sophisticated MERN/PERN architectural patterns.
 

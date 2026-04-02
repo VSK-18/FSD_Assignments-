@@ -1,6 +1,6 @@
 # 🎓 Student Feedback Review System
 
-![Banner](./assets/banner.png)
+
 
 A modern, full-stack application designed for students to provide reviews for their courses and instructors. Built with a focus on premium aesthetics, glassmorphism, and a smooth user experience powered by React and Framer Motion.
 

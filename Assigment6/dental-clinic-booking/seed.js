@@ -6,10 +6,7 @@ const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/dental_clin
 
 const seedDentists = async () => {
     try {
-        await mongoose.connect(mongoURI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
+        await mongoose.connect(mongoURI);
         console.log('Connected to MongoDB for seeding');
 
         // Check if dentists exist

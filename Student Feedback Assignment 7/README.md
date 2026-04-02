@@ -1,18 +1,23 @@
-# Student Feedback Review System 🎓
+# 🎓 Student Feedback Review System
 
-A modern, full-stack application designed for students to provide reviews for their courses and instructors. Built with a focus on premium aesthetics and a smooth user experience.
+![Banner](./assets/banner.png)
 
-## ✨ Features
-- **Interactive Star Ratings**: Custom star components for intuitive feedback.
-- **Glassmorphism UI**: Beautiful, frosted-glass design with a deep Indigo & Slate palette.
-- **Admin Dashboard**: Real-time stats and feedback aggregation using MongoDB.
-- **Micro-Animations**: Smooth transitions powered by `Framer Motion`.
-- **Mock DB Support**: Uses `mongodb-memory-server` for instant testing without a local MongoDB installation.
+A modern, full-stack application designed for students to provide reviews for their courses and instructors. Built with a focus on premium aesthetics, glassmorphism, and a smooth user experience powered by React and Framer Motion.
 
-## 🛠️ Tech Stack
-- **Frontend**: React.js, Vite, Framer Motion, Lucide Icons, Axios.
-- **Backend**: Node.js, Express, Mongoose.
-- **Database**: MongoDB (via MongoMemoryServer or External URI).
+## 🛠️ Technology Stack
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+
+## ✨ Key Features
+- **Interactive Star Ratings:** Custom star components for intuitive and engaging feedback.
+- **Glassmorphism UI:** Beautiful, frosted-glass design with a deep Indigo & Slate palette.
+- **Admin Dashboard:** Real-time stats and feedback aggregation using MongoDB.
+- **Micro-Animations:** Smooth transitions and layout animations powered by `Framer Motion`.
+- **Database Flexibility:** Uses `mongodb-memory-server` for instant testing without a local MongoDB installation.
 
 ## 🚀 Getting Started
 
@@ -45,4 +50,4 @@ A modern, full-stack application designed for students to provide reviews for th
 - `/server`: Backend Express API & Mongoose models.
 
 ---
-Built with ❤️ by Antigravity AI
+*Part of the Full Stack Development Assignment Series.*

@@ -1,6 +1,6 @@
 # 🦷 32 Smiles - Dental Clinic Booking
 
-![Banner](./assets/banner.png)
+
 
 A comprehensive online dental clinic appointment booking system built using Node.js, Express, and MongoDB. Features a vibrant front-end styled with modern glassmorphism and a robust reservation management backend.
 

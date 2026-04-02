@@ -1,4 +1,4 @@
-# LuxeJourney Travel Agency
+# Travel Buddy Travel Agency
 
 A full-stack travel agency web application built with a Node.js and Express backend, utilizing EJS for server-side templating and MongoDB as the database.
 

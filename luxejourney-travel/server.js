@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
 // MongoDB Connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/luxejourney';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/travelbuddy';
 mongoose.connect(MONGO_URI)
     .then(() => {
         console.log('Connected to MongoDB');

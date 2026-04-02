@@ -1,7 +1,7 @@
 {
-  "name": "luxejourney-travel",
+  "name": "travel-buddy",
   "version": "1.0.0",
-  "description": "LuxeJourney Travel Agency Website",
+  "description": "Travel Buddy Travel Agency Website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

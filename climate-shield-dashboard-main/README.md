@@ -1,6 +1,6 @@
 # 🌍 Climate Shield Dashboard
 
-![Banner](./assets/banner.png)
+
 
 An interactive, high-performance climate monitoring dashboard built using React and Vite. It provides real-time data visualization and mapping capabilities to track climate changes and environmental metrics.
 

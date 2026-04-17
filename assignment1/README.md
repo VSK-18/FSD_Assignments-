@@ -16,3 +16,4 @@ A static, nicely formatted webpage showcasing the Pimpri Chinchwad College of En
 
 ## 💡 Learning Outcomes
 This assignment focuses on the fundamentals of web design using raw HTML. It demonstrates text formatting, table generation, and creating a cohesive webpage layout without the dependence on CSS or advanced frameworks.
+`n---`n*AI for debugging and snippet generation.*

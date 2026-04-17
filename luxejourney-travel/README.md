@@ -39,4 +39,5 @@ A full-stack travel agency web application built with a Node.js and Express back
 - `public/`: Static assets (CSS, JS, images) served to the client.
 
 ---
+*AI for debugging and snippet generation.*
 *Part of the Full Stack Development Assignment Series.*

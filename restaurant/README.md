@@ -23,4 +23,5 @@ An elegant, fully responsive website for an authentic pure vegetarian Indian res
 To interact with the website, simply open `index.html` in any modern web browser. All features like the cart and menu filters are handled via client-side JavaScript for an instant, responsive feel.
 
 ---
+*AI for debugging and snippet generation.*
 *Part of the Full Stack Development Assignment Series.*

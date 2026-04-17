@@ -41,4 +41,5 @@ An interactive, high-performance climate monitoring dashboard built using React 
 - `package.json`: Manages scripts and dependencies.
 
 ---
+*AI for debugging and snippet generation.*
 *Part of the Full Stack Development Assignment Series.*

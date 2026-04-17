@@ -50,4 +50,5 @@ A modern, full-stack application designed for students to provide reviews for th
 - `/server`: Backend Express API & Mongoose models.
 
 ---
+*AI for debugging and snippet generation.*
 *Part of the Full Stack Development Assignment Series.*

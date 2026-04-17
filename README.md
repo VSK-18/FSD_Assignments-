@@ -35,6 +35,7 @@ Each project below demonstrates specific mastery of web technologies and design 
 2. **Full-Stack Projects:** Navigate to the project directory and follow the localized `README.md` for `npm install` and `npm start` instructions.
 
 ---
+*AI for debugging and snippet generation.*
 *Developed & maintained by **Vardhan Santosh Khinvasara**.*
 
 
@@ -72,3 +73,4 @@ To run full-stack or framework-based projects (`climate-shield-dashboard-main`, 
 
 ---
 *Developed & maintained by **Vardhan Santosh Khinvasara**.*
+`n*AI for debugging and snippet generation.*`n

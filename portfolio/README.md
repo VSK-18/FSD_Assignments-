@@ -24,6 +24,7 @@ A sleek, responsive, and modern personal portfolio website showcasing projects, 
 Simply open the `index.html` file in any modern web browser to explore the portfolio.
 
 ---
+*AI for debugging and snippet generation.*
 *Developed & maintained by Vardhan Santosh Khinvasara.*
 
 
@@ -45,3 +46,6 @@ This portfolio serves as a central hub for highlighting technical proficiency, p
 
 ## 🚀 How to View
 Simply open the `index.html` file in any modern web browser to view the portfolio.
+
+---
+*AI for debugging and snippet generation.*

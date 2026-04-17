@@ -41,4 +41,5 @@ A comprehensive online dental clinic appointment booking system built using Node
    Visit `http://localhost:3000` in your browser.
 
 ---
+*AI for debugging and snippet generation.*
 *Part of the Full Stack Development Assignment Series.*
